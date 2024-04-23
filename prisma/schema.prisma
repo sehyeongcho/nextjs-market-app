@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum UserType {
+  User
+  Admin
+}
+
+model User {
+  id               String    @id @default(cuid())
+  name             String?
+  hashedPassword   String?
+  email            String?   @unique
+  emailVerified    DateTime?
+  image            String?
+  accounts         Account[]
+  sessions         Session[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  userType         UserType  @default(User)
+  
+  favoriteIds      String[]
+  products         Product[]
+
+  conversations    Conversation[]
+  sentMessages     Message[] @relation("sender")
+  receivedMessages Message[] @relation("receiver")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Product {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  imageSrc    String
+  category    String
+  userId      String
+  price       Int
+  latitude    Float
+  longitude   Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Conversation:
+// A 유저와 B 유저가 대화를 했으면 이 둘의 ID를 이용해서 하나의 Row를 생성합니다. 먼저 말을 건 사람의 ID가 senderId가 됩니다.
+model Conversation {
+  id         String @id @default(cuid())
+  name       String?
+  senderId   String
+  receiverId String
+  users      User[]
+  messages   Message[]
+  createdAt  DateTime @default(now())
+}
+
+// Message:
+// 대화한 모든 하나하나의 내용을 각각 하나의 Row로 생성합니다.
+model Message {
+  id             String @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  text           String?
+  image          String?
+  sender         User @relation(name: "sender", fields: [senderId], references: [id])
+  senderId       String
+  receiver       User @relation(name: "receiver", fields: [receiverId], references: [id])
+  receiverId     String
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  conversationId String
+}
