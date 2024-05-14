@@ -1,3 +1,7 @@
+/**
+ * 사용자 이미지를 표시하는 Avatar 컴포넌트를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import Image from 'next/image'

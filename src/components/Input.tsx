@@ -1,3 +1,7 @@
+/**
+ * Input 컴포넌트를 정의하는 파일입니다.
+ */
+
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 interface InputProps {
@@ -7,8 +11,8 @@ interface InputProps {
   disabled?: boolean;
   formatPrice?: boolean;
   required?: boolean;
-  register: UseFormRegister<FieldValues>;
-  errors: FieldErrors;
+  register: UseFormRegister<FieldValues>; // react-hook-form에서 제공하는 입력을 폼에 등록하는 함수입니다.
+  errors: FieldErrors; // react-hook-form에서 제공하는 유효성 검사 오류를 담은 객체입니다.
 }
 
 const Input: React.FC<InputProps> = ({
@@ -19,9 +23,10 @@ const Input: React.FC<InputProps> = ({
   formatPrice,
   required,
   register,
-  errors,
+  errors
 }) => {
   return (
+    // label의 for 속성을 이용하여 input의 id 속성과 연결하는 대신, label과 input이 동일한 부모 요소를 가지면 자동으로 연결된 것으로 인식됩니다.
     <div className="relative w-full">
       {formatPrice && (
         <span className="absolute text-neutral-700 top-5 left-2">₩</span>
@@ -29,7 +34,7 @@ const Input: React.FC<InputProps> = ({
       <input
         id={id}
         disabled={disabled}
-        {...register(id, { required })}
+        {...register(id, { required })} // 사용자가 값을 입력하지 않으면 유효성 검사 오류가 발생합니다.
         placeholder=""
         type={type}
         className={`

@@ -1,3 +1,7 @@
+/**
+ * 상품의 이름과 사진을 표시하는 ProductHead 컴포넌트를 정의하는 파일입니다.
+ */
+
 import { User } from '@prisma/client'
 import React from 'react'
 import Heading from '../Heading'

@@ -1,3 +1,7 @@
+/**
+ * 채팅 페이지에서 채팅 중인 유저 목록을 나열하기 위한 Contacts 컴포넌트를 정의하는 파일입니다.
+ */
+
 import { TUserWithChat } from '@/types'
 import React from 'react'
 import User from './User'

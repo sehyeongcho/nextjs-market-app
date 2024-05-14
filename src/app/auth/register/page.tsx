@@ -1,4 +1,10 @@
+/**
+ * 회원가입 페이지를 생성하는 파일입니다.
+ * 이 파일에서는 useState()를 사용하므로 'use client'를 표시하여 클라이언트 컴포넌트로 설정합니다.
+ */
+
 'use client'
+
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import axios from 'axios'
@@ -13,21 +19,20 @@ const RegisterPage = () => {
     register,
     handleSubmit,
     formState: {
-      errors,
-    },
+      errors
+    }
   } = useForm<FieldValues>({
     defaultValues: {
       name: '',
       email: '',
-      password: '',
-    },
+      password: ''
+    }
   })
   const router = useRouter()
   const onSubmit: SubmitHandler<FieldValues> = async (body) => {
     setIsLoading(true)
     try {
-      const { data } = await axios.post("/api/register", body)
-      // console.log(data)
+      const { data } = await axios.post("/api/register", body) // register 컴포넌트는 클라이언트 컴포넌트이므로 Register 버튼을 눌렀을 때 서버 API에 요청을 보내서 입력한 payload를 데이터베이스에 저장해야 합니다.
       router.push('/auth/login')
     } catch (error) {
       console.log(error)

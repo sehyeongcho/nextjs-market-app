@@ -1,3 +1,7 @@
+/**
+ * Contacts 컴포넌트의 각 유저를 표시하기 위한 컴포넌트를 정의하는 파일입니다.
+ */
+
 import { TConversation, TUserWithChat } from '@/types'
 import React from 'react'
 import Avatar from '../Avatar'

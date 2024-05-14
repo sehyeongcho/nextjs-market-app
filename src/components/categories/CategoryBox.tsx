@@ -1,3 +1,7 @@
+/**
+ * 메인 페이지에 있는 카테고리의 각 항목을 정의하는 파일입니다.
+ */
+
 import Link from 'next/link'
 import React from 'react'
 import { IconType } from 'react-icons'

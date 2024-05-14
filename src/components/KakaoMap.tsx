@@ -1,3 +1,7 @@
+/**
+ * 카카오맵 컴포넌트를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import React from 'react'
@@ -7,7 +11,7 @@ interface KakaoMapProps {
   setCustomValue?: (id: string, value: number) => void,
   latitude: number,
   longitude: number,
-  detailPage?: boolean,
+  detailPage?: boolean
 }
 
 const KakaoMap = ({

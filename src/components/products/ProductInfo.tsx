@@ -1,3 +1,7 @@
+/**
+ * 상품을 등록한 사람, 등록한 시간, 상품의 카테고리, 카테고리 설명 등의 세부 정보를 표시하는 ProductInfo 컴포넌트를 정의하는 파일입니다.
+ */
+
 import { User } from '@prisma/client'
 import React from 'react'
 import { IconType } from 'react-icons'

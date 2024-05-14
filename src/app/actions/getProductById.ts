@@ -1,3 +1,7 @@
+/**
+ * Id가 일치하는 한 개의 상품 데이터를 가져오는 작업을 모듈화 한 파일입니다.
+ */
+
 import prisma from "@/helpers/prismadb"
 
 interface Params {
@@ -15,7 +19,7 @@ export default async function getProductById(
         id: productId
       },
       include: {
-        user: true
+        user: true // 상품 정보를 가져올 때 연결된 user 정보도 함께 가져옵니다.
       }
     })
 

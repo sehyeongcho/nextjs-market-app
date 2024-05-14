@@ -1,3 +1,7 @@
+/**
+ * 채팅 페이지에서 채팅 내역을 불러오거나 채팅을 입력하기 위한 데이터베이스로의 요청을 처리하는 서버 API 파일입니다.
+ */
+
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "@/helpers/prismadb";

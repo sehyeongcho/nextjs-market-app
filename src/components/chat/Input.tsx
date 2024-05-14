@@ -1,6 +1,8 @@
+/**
+ * 채팅 페이지에서 메시지를 입력 및 전송하기 위한 Input 컴포넌트를 정의하는 파일입니다.
+ */
+
 /* eslint-disable @next/next/no-img-element */
-import axios from 'axios'
-import Image from 'next/image'
 import React, { FormEvent, useRef, useState } from 'react'
 import { IoImageOutline } from 'react-icons/io5'
 import { RiSendPlaneLine } from 'react-icons/ri'
@@ -53,12 +55,6 @@ const Input = ({
 
     if (message || imgUrl) {
       try {
-        // await axios.post("/api/chat", {
-        //   text: message,
-        //   image: imgUrl,
-        //   receiverId: receiverId,
-        //   senderId: currentUserId
-        // })
         trigger({
           text: message,
           image: imgUrl,

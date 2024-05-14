@@ -1,3 +1,7 @@
+/**
+ * 빈 페이지에 표시할 컴포넌트를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import React from 'react'
@@ -44,7 +48,7 @@ const EmptyState = ({
           <Button
             outline
             label="모든 필터 제거"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/")} // 버튼 클릭 시 "/" 경로로 이동시키면, searchParams가 빈 객체가 되기 때문에 모든 필터가 제거됩니다.
           />
         )}
       </div>

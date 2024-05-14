@@ -1,3 +1,7 @@
+/**
+ * 누구나 열람할 수 있는 페이지를 정의하는 파일입니다.
+ */
+
 import Container from "@/components/Container"
 import getProducts, { ProductsParams } from "../actions/getProducts"
 import EmptyState from "@/components/EmptyState"
@@ -12,10 +16,12 @@ interface HomeProps {
   searchParams: ProductsParams
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home(
-  { searchParams }: HomeProps
+  { searchParams }: HomeProps // 서버 컴포넌트에서 URL 파라미터를 받아오고 싶다면 page.tsx 파일에서 props로 searchParams를 받아오면 됩니다.
 ) {
-  const products = await getProducts(searchParams)
+  const products = await getProducts(searchParams) // URL 파라미터가 존재하지 않으면 특별한 조건이 없으므로 Product 테이블의 모든 데이터를 가져오게 됩니다.
   const currentUser = await getCurrentUser()
 
   console.log(products)
@@ -54,7 +60,7 @@ export default async function Home(
               ))}
             </div>
 
-            <Pagination 
+            <Pagination
               page={pageNum}
               totalItems={products.totalItems}
               perPage={PRODUCTS_PER_PAGE}

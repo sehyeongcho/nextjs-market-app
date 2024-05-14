@@ -1,3 +1,7 @@
+/**
+ * 상품 생성하기 버튼을 눌렀을 때 입력한 payload를 데이터베이스에 저장하기 위한 요청을 처리하는 서버 API 파일입니다.
+ */
+
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "@/helpers/prismadb"

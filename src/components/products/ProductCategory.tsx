@@ -1,3 +1,7 @@
+/**
+ * 상품의 카테고리를 표시하는 ProductCategory 컴포넌트를 정의하는 파일입니다.
+ */
+
 import React from 'react'
 import { IconType } from 'react-icons'
 

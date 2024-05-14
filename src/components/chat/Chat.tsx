@@ -1,3 +1,7 @@
+/**
+ * 채팅 페이지에서 채팅 내용을 나열하기 위한 Chat 컴포넌트를 정의하는 파일입니다.
+ */
+
 import { TUserWithChat } from '@/types'
 import React, { useEffect, useRef } from 'react'
 import Input from './Input'

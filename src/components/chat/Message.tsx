@@ -1,3 +1,7 @@
+/**
+ * 채팅 페이지에서 각 메시지를 표시하기 위한 Message 컴포넌트를 정의하는 파일입니다.
+ */
+
 import React from 'react'
 import Avatar from '../Avatar'
 import { fromNow } from '@/helpers/dayjs'

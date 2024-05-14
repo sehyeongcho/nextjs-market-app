@@ -1,3 +1,7 @@
+/**
+ * 상품을 즐겨찾기에 추가하거나 삭제하는 favorite 기능을 정의하는 파일입니다.
+ */
+
 import { User } from '@prisma/client'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
@@ -39,7 +43,7 @@ const useFavorite = ({
       }
 
       await request()
-      router.refresh()
+      router.refresh() // 사용자가 상품을 즐겨찾기에 추가하거나 제거한 후에 즉시 해당 변경 사항을 화면에 반영하기 위해 사용합니다.
       toast.success('성공했습니다')
     } catch (error) {
       toast.error('실패했습니다')

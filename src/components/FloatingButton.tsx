@@ -1,3 +1,7 @@
+/**
+ * 페이지에 떠 있는 플로팅 버튼 컴포넌트를 정의하는 파일입니다.
+ */
+
 import Link from 'next/link'
 import React from 'react'
 

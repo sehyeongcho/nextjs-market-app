@@ -1,3 +1,8 @@
+/**
+ * 상품을 업로드하기 위한 페이지를 생성하는 파일입니다.
+ * 이 파일에서는 useState()를 사용하므로 'use client'를 표시하여 클라이언트 컴포넌트로 설정합니다.
+ */
+
 'use client'
 
 import Button from '@/components/Button'
@@ -21,8 +26,8 @@ const ProductUploadPage = () => {
     setValue,
     watch,
     formState: {
-      errors,
-    },
+      errors
+    }
   } = useForm<FieldValues>({
     defaultValues: {
       title: '',
@@ -31,7 +36,7 @@ const ProductUploadPage = () => {
       latitude: 33.5563,
       longitude: 126.79581,
       imageSrc: '',
-      price: 1,
+      price: 1
     }
   })
   const imageSrc = watch('imageSrc')
@@ -56,25 +61,26 @@ const ProductUploadPage = () => {
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value)
   }
+
+  // dynamic import를 사용하면 모듈을 빌드 타임이 아닌 런타임에 불러옵니다.
+  // dynamic import를 사용하면 번들 파일을 분리하고 퍼포먼스가 향상될 수 있습니다.
   const KakaoMap = dynamic(() => import('../../../components/KakaoMap'), {
-    ssr: false
+    ssr: false // 클라이언트 사이드에서 컴포넌트를 불러오므로, 서버 사이드 렌더링을 비활성화합니다.
   })
 
   return (
     <Container>
-      <div
-        className="max-w-screen-lg mx-auto"
-      >
+      <div className="max-w-screen-lg mx-auto">
         <form
           className="flex flex-col gap-8"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <Heading 
+          <Heading
             title="Product Upload"
             subtitle="Upload your product"
           />
 
-          <ImageUpload 
+          <ImageUpload
             onChange={(value) => setCustomValue('imageSrc', value)}
             value={imageSrc}
           />
@@ -116,12 +122,10 @@ const ProductUploadPage = () => {
 
           <hr />
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto">
             {categories.map((item) => (
               <div key={item.label} className="col-span-1">
-                <CategoryInput 
+                <CategoryInput
                   onClick={(category) => setCustomValue('category', category)}
                   selected={category === item.path}
                   label={item.label}

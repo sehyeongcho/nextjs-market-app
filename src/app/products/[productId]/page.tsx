@@ -1,3 +1,7 @@
+/**
+ * 상품 상세 페이지를 정의하는 파일입니다.
+ */
+
 import getCurrentUser from '@/app/actions/getCurrentUser'
 import getProductById from '@/app/actions/getProductById'
 import EmptyState from '@/components/EmptyState'

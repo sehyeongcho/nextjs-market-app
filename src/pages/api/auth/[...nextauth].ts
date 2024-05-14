@@ -1,3 +1,7 @@
+/**
+ * 인증 기능을 제공하는 NextAuth를 설정하는 파일입니다.
+ */
+
 import NextAuth, { NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials"
@@ -49,37 +53,27 @@ export const authOptions: NextAuthOptions = {
         }
 
         return user
-
-        // if (user) {
-        //   // Any object returned will be saved in `user` property of the JWT
-        //   return user
-        // } else {
-        //   // If you return null then an error will be displayed advising the user to check their details.
-        //   return null
-
-        //   // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
-        // }
       }
     })
   ],
   session: {
-    strategy: "jwt",
+    strategy: "jwt" // 세션 데이터를 jwt에 저장합니다. jwt 대신 데이터베이스에 저장할 수도 있습니다.
   },
   jwt: {
+    // JWT(JSON Web Token)는 세션 데이터를 안전하게 전달하고 저장하기 위한 토큰입니다.
     secret: process.env.JWT_SECRET,
     maxAge: 30 * 24 * 60 * 60 // 30 days
   },
   pages: {
-    signIn: '/auth/login',
+    // pages 속성을 사용하여 signIn 페이지의 경로를 변경할 수 있습니다. 그리고 변경한 경로에 해당하는 페이지를 생성하여 커스텀 로그인 페이지를 생성할 수 있습니다.
+    signIn: '/auth/login'
   },
   callbacks: {
+    // jwt 함수에서 token, user 데이터를 받아와서 각 데이터를 전개한 후 합친 데이터를 반환합니다. 여기서 반환되는 데이터는 session 함수의 token 매개변수에 전달됩니다. 현재 session에는 user, expires property가 있고, session.user에 token을 할당하면 기존에 있던 유저 데이터에 토큰 데이터를 추가할 수 있습니다.
     async jwt({ token, user }) {
-      // console.log('token', token)
-      // console.log('user', user)
       return { ...token, ...user }
     },
     async session({ session, token }) {
-      // console.log('@', session, token)
       session.user = token
       return session
     }

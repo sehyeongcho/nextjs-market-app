@@ -1,3 +1,7 @@
+/**
+ * 로딩 중일 때 표시될 컴포넌트를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import React from 'react'

@@ -1,3 +1,7 @@
+/**
+ * 상품 업로드 페이지에 있는 카테고리의 각 항목을 정의하는 파일입니다.
+ */
+
 'use client'
 
 import React from 'react'

@@ -1,3 +1,7 @@
+/**
+ * 홈페이지에 표시되는 상품 한 개의 카드 컴포넌트를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import { Product, User } from '@prisma/client'

@@ -1,3 +1,7 @@
+/**
+ * 상품 상세 페이지의 UI를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import Button from '@/components/Button'

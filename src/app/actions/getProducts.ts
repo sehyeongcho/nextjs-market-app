@@ -1,3 +1,7 @@
+/**
+ * 상품 데이터를 가져오는 작업을 모듈화 한 파일입니다.
+ */
+
 import { PRODUCTS_PER_PAGE } from "@/constants"
 import prisma from "@/helpers/prismadb"
 

@@ -1,3 +1,7 @@
+/**
+ * 페이지를 매기기 위한 페이지네이션 기능을 정의하는 컴포넌트 파일입니다.
+ */
+
 'use client'
 
 import React from 'react'

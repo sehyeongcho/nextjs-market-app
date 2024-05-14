@@ -1,3 +1,7 @@
+/**
+ * Button 컴포넌트를 정의하는 파일입니다.
+ */
+
 import { IconType } from "react-icons";
 
 interface ButtonProps {

@@ -1,3 +1,7 @@
+/**
+ * 페이지네이션에서 페이지 이동 기능을 정의하는 컴포넌트 파일입니다.
+ */
+
 'use client'
 
 import { PRODUCTS_PER_PAGE } from '@/constants'

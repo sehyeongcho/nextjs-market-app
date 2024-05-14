@@ -1,3 +1,8 @@
+/**
+ * 반응형 내비게이션 바를 정의하는 파일입니다.
+ * 이 파일에서는 useState()를 사용하므로 'use client'를 표시하여 클라이언트 컴포넌트로 설정합니다.
+ */
+
 'use client'
 
 import Link from 'next/link'
@@ -11,8 +16,6 @@ interface NavBarProps {
 
 const NavBar = ({ currentUser }: NavBarProps) => {
   const [menu, setMenu] = useState(false)
-
-  // console.log('currentUser', currentUser)
 
   const handleMenu = () => {
     setMenu(!menu)

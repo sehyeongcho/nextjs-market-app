@@ -1,3 +1,8 @@
+/**
+ * 사용자의 세션 데이터를 가져오는 작업을 모듈화 한 파일입니다.
+ * useSession() 함수는 클라이언트 컴포넌트에서, getServerSession() 함수는 서버 컴포넌트에서 세션 데이터를 가져올 수 있습니다. 
+ */
+
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 

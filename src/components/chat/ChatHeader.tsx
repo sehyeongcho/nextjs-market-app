@@ -1,3 +1,7 @@
+/**
+ * 채팅 페이지에서 현재 채팅 중인 상대 유저의 정보를 표시하기 위한 ChatHeader 컴포넌트를 정의하는 파일입니다.
+ */
+
 import React from 'react'
 import Avatar from '../Avatar'
 import { IoChevronBackCircleSharp } from 'react-icons/io5'
@@ -20,9 +24,9 @@ const ChatHeader = ({
     <div className="pl-4 border-b-[1px]">
       <div className="flex items-center h-16 gap-4">
         <div className="flex items-center justify-center text-3xl text-gray-400 hover:text-gray-600">
-          <button 
-          onClick={() => setLayout(false)} 
-          className="md:hidden">
+          <button
+            onClick={() => setLayout(false)}
+            className="md:hidden">
             <IoChevronBackCircleSharp />
           </button>
         </div>

@@ -1,3 +1,7 @@
+/**
+ * 상품 업로드 페이지 및 메인 페이지의 카테고리를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
@@ -67,7 +71,7 @@ const Categories = () => {
       className="flex flex-row items-center justify-between pt-4 overflow-x-auto"
     >
       {categories.map((item) => (
-        <CategoryBox 
+        <CategoryBox
           key={item.label}
           label={item.label}
           path={item.path}

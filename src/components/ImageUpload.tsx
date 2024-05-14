@@ -1,3 +1,8 @@
+/**
+ * 이미지를 업로드하기 위한 컴포넌트를 정의하는 파일입니다.
+ * 이 파일에서는 상호작용 및 이벤트 리스너(onClick())를 사용하므로 'use client'를 표시하여 클라이언트 컴포넌트로 설정합니다.
+ */
+
 'use client'
 
 import { CldUploadWidget } from 'next-cloudinary'

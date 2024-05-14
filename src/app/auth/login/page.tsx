@@ -1,4 +1,10 @@
+/**
+ * 커스텀 로그인 페이지를 생성하는 파일입니다.
+ * 이 파일에서는 useState()를 사용하므로 'use client'를 표시하여 클라이언트 컴포넌트로 설정합니다.
+ */
+
 'use client'
+
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import { signIn } from 'next-auth/react'
@@ -12,19 +18,18 @@ const LoginPage = () => {
     register,
     handleSubmit,
     formState: {
-      errors,
-    },
+      errors
+    }
   } = useForm<FieldValues>({
     defaultValues: {
       email: '',
-      password: '',
-    },
+      password: ''
+    }
   })
   const onSubmit: SubmitHandler<FieldValues> = async (body) => {
     setIsLoading(true)
     try {
       const data = await signIn("credentials", body)
-      // console.log(data)
     } catch (error) {
       console.log(error)
     } finally {

@@ -1,3 +1,7 @@
+/**
+ * Heading 컴포넌트를 정의하는 파일입니다.
+ */
+
 'use client'
 
 import React from 'react'
@@ -8,10 +12,10 @@ interface HeadingProps {
   center?: boolean;
 }
 
-const Heading: React.FC<HeadingProps> = ({ 
-  title, 
-  subtitle, 
-  center 
+const Heading: React.FC<HeadingProps> = ({
+  title,
+  subtitle,
+  center
 }) => {
   return (
     <div className={center ? "text-center" : "text-start"}>

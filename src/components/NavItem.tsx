@@ -1,10 +1,14 @@
+/**
+ * 내비게이션 바에 표시되는 아이템을 정의하는 파일입니다.
+ */
+
 import { User } from '@prisma/client'
 import { signIn, signOut } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 
 interface NavItemProps {
-  mobile?: boolean
+  mobile?: boolean // `mobile` prop이 선택적(optional)임을 나타냅니다.
   currentUser?: User | null
 }
 
