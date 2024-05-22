@@ -35,7 +35,15 @@ export default async function Home(
       {
         products?.data.length === 0
           ?
-          <EmptyState showReset />
+          <>
+            <EmptyState showReset />
+
+            <div>{currentUser?.email}</div>
+            {/* FloatingButton */}
+            <FloatingButton href="/products/upload">
+              +
+            </FloatingButton>
+          </>
           :
           <>
             <div
