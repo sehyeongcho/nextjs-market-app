@@ -38,11 +38,17 @@ export default async function Home(
           <>
             <EmptyState showReset />
 
-            <div>{currentUser?.email}</div>
+            {/* 시작 */}
+            {
+              currentUser
+              ? <div>{currentUser?.email}</div>
+              : <div>없습니다!!!</div>
+            }
             {/* FloatingButton */}
             <FloatingButton href="/products/upload">
               +
             </FloatingButton>
+            {/* 종료 */}
           </>
           :
           <>
