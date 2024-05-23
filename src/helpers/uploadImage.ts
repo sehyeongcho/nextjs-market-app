@@ -14,7 +14,6 @@ const uploadImage = async (image: File) => {
   })
 
   const data = await response.json()
-  console.log(data)
   return data.url
 }
 

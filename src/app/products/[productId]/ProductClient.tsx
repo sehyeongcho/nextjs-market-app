@@ -27,9 +27,6 @@ const ProductClient = ({
 
   const category = categories.find((item) => item.path === product.category)
 
-  console.log('product', product)
-  console.log('category', category)
-
   const KakaoMap = dynamic(() => import('../../../components/KakaoMap'), {
     ssr: false
   })

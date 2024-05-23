@@ -44,7 +44,7 @@ const Pagination = ({
         // getPageItem function returns the type of page based on the index.
         // It also automatically calculates if the page is disabled.
         const { page, disabled, current } = getPageItem(i)
-        console.log('page, disabled, current', page, disabled, current)
+
         if (page === 'previous') {
           return (
             <PaginationLink

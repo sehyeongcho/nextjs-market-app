@@ -24,8 +24,6 @@ export default async function Home(
   const products = await getProducts(searchParams) // URL 파라미터가 존재하지 않으면 특별한 조건이 없으므로 Product 테이블의 모든 데이터를 가져오게 됩니다.
   const currentUser = await getCurrentUser()
 
-  console.log(products)
-
   const page = searchParams?.page
   const pageNum = typeof page === 'string' ? Number(page) : 1
 
