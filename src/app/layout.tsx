@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: '중고 마켓에 오신 것을 환영합니다',
     images: [
       {
-        url: './market.jpg',
+        url: '/market.jpg',
         alt: 'market'
       }
     ]
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: '중고 마켓에 오신 것을 환영합니다',
     images: [
       {
-        url: './market.jpg',
+        url: '/market.jpg',
         alt: 'market'
       }
     ]
