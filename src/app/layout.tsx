@@ -14,6 +14,7 @@ import ToastProvider from '@/components/ToastProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nextjs-market-app-k8od.vercel.app/'),
   title: 'Used Market',
   description: '중고 마켓에 오신 것을 환영합니다',
   openGraph: {
