@@ -23,3 +23,6 @@ HTML, Tailwind CSS, TypeScript, Next.js, Prisma, PostgreSQL을 이용한 중고 
 - Next.js
 - Prisma
 - PostgreSQL
+
+## 학습 내용
+[nextjs-market-app wiki](https://github.com/sehyeongcho/nextjs-market-app/wiki)
